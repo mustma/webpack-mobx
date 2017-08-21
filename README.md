@@ -2,33 +2,13 @@
 这是一个webpack+mobx的框架
 
 使用方式：
-npm install
+    npm install
 
-启动和打包参见  package.json
+    启动和打包参见  package.json
 
-按需加载使用的是react-router 4.1.1，将react-router和react-router-dom分开
-用bundle-loader处理路由，组件
+按需加载使用的是react-router 4.1.1和webpack的chunkFilename  
 
-import Bundle from './components/bundle';
-import Index from 'bundle-loader?lazy!./containers/index/index';
-import Order from 'bundle-loader?lazy!./containers/order/order';
+注意：react-router 4.1.1将react-router和react-router-dom分开
 
-const IndexComponent = () => (
-    <Bundle load={Index}>
-        {(Index) => <Index />}
-    </Bundle>
-);
-const OrderComponent = () => (
-    <Bundle load={Order}>
-        {(Order) => <Order />}
-    </Bundle>
-);
+用bundle-loader处理路由，组件，参考app.js
 
-render((
-    <BrowserRouter>
-         <div className="page">
-            <Route exact path='/' component={IndexComponent} />
-            <Route path='/order' component={OrderComponent} />
-         </div>   
-    </BrowserRouter>
-), document.getElementById('container'))

@@ -1,0 +1,16 @@
+@import '../mixin/function';
+
+.page{
+	&.index{
+		@extend %bg;
+		background-color: #9a2e2a;
+		background-image: url(../images/index-img1.jpg);
+		.btn{
+			top: 976px;
+			&:before{
+				background-image: url(../images/start-txt.png);
+			}
+		}
+		
+	}
+}

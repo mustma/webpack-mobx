@@ -1,0 +1,1 @@
+export const GLOBAL_API_DOMAIN = '//h5';   //接口地址
